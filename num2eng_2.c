@@ -91,7 +91,9 @@ char* numberToWords(int num) {
 int main(void) {
     char* ptr = NULL;
     size_t input_num = sizeof(input)/sizeof(int);
+
     printf("sizeof input = %ld\n", input_num);
+
     for(int i=0; i<input_num; i++) {
         printf("input[%d] = %d\n", i, input[i]);
         ptr = numberToWords(input[i]);
