@@ -1,2 +1,1 @@
-# leetcode-practice
-# Add num2words.c to solve 273 problem
+# Linux c language practice
