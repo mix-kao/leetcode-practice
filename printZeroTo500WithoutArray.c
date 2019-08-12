@@ -8,20 +8,18 @@
 請用最少的時間和空間複雜度完成。
 */
 void print0to500(int* a, size_t a_size) {
-    int match = 0;
     for(int i=0; i<=500; i++) {
-        match = 0;
-        for(int j=0; j<a_size; j++) {
-            if(i == *(a+j)) {match=1; break;}
+        if(i == *a) a++;
+        else {
+            printf("%d ", i);
+            if((i%10)==0) printf("\n");
         }
-        if(!match) printf("%d ", i);
     }
 }
 
 
 int main(void) {
-    
-    int a[] = {1, 2, 3, 4, 5, 10};
+    int a[] = {1, 2, 3, 4, 5, 10, 40, 50, 60, 150, 250, 350, 450, 499};
     size_t a_size = sizeof(a)/sizeof(a[0]);
     print0to500(a, a_size);
     return 0;
