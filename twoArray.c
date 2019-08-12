@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define STR_LEN 256
-
-
+// Function for finding
+// elements which are there
+// in a[] but not in b[].
 void findMissing(int a[], int b[], size_t a_size, size_t b_size) {
     int same_flag = 0;
     for(int i=0; i<a_size; i++) {
