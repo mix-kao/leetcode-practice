@@ -3,6 +3,11 @@
 #include <string.h>
 
 /*
+Reference WEB site
+https://secondcoderlife.blogspot.com/2019/02/blog-post.html
+*/
+
+/*
 題目會給一個int a[20]已排序的陣列，
 請寫一個function(a, size, b)能依照參數b(b = 0~4)別印出該區間的數字，
 且不包含a陣列內的元素，
