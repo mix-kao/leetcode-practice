@@ -21,7 +21,7 @@ int main(void) {
         for(int j=0; j<b_size; j++) {
             if(a[i] == b[j]) { same_flag = 1; break;}
         }
-        if(same_flag==0) printf("%d\n", a[i]);
+        if(!same_flag) printf("%d\n", a[i]);
     }
     return 0;
 }
