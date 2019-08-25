@@ -66,13 +66,13 @@ void select_sort(int ary_num, int* ptr) {
 }
 
 
-void quick_sort(int ary_num, int* ptr) {
+void quick_sort(int* ptr, int front, int end) {
     int temp, count=0;
     int swap_flag = 0;
-    int end = ary_num-1;
     int pivot = end;
-    int index = -1;
-    for(int i=0; i<end; i++) {
+    int index = front-1;
+    int i;
+    for(i=0; i<end; i++) {
             count++;
             if(*(ptr+i) < *(ptr+pivot)) {
                 index++;
@@ -82,7 +82,19 @@ void quick_sort(int ary_num, int* ptr) {
     }
     index++;
     swap((ptr+pivot), (ptr+index));
-    printf("quick sort element number = %d, time complexity = %d\n", ary_num, count);
+
+    for(i=index+1; i<end; i++) {
+            count++;
+            if(*(ptr+i) < *(ptr+pivot)) {
+                index++;
+                swap((ptr+i), (ptr+index));
+                swap_flag = 1;
+            }
+    }
+    index++;
+    swap((ptr+pivot), (ptr+index));
+
+    printf("quick sort element number = %d, time complexity = %d, index=%d\n", end+1, count, index);
     if(swap_flag) printf("sorted\n");
     else printf("not sort\n");
 }
@@ -92,7 +104,7 @@ int main(void) {
     showData(ary_num, BEFORE);
     //bubble_sort(ary_num, unsorted_data);
     //select_sort(ary_num, unsorted_data);
-    quick_sort(ary_num, unsorted_data);
+    quick_sort(unsorted_data, 0, ary_num-1);
     showData(ary_num, AFTER);
     return 0;
 }
