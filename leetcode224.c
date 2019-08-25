@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void calculate(char* str) {
+int calculate(char* str) {
     int len = strlen(str);
     int sign=1, num=0, res=0;
     int* stack = malloc(sizeof(int)*len);
@@ -28,17 +28,19 @@ void calculate(char* str) {
             res += stack[--top];
         }
     }
+
     for(int k=len-1; k>=0; k--) {
         if(stack[k]!=0)
         printf("stack[%d] = %d\n", k, stack[k]);
     }
-    res += sign * num;
-    printf("result = %d \n", res);
+
+    free(stack);
+    return res += sign * num;
 
 }
 
 int main(void) {
     char* s= "300  + (100 - 100) +100 ";
-    cal(s);
+    printf("result = %d \n", calculate(s));
     return 0;
 }
