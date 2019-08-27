@@ -35,12 +35,13 @@ int calculate(char* str) {
     }
 
     free(stack);
-    return res += sign * num;
+    return res += sign * num; //處裡括號之後還有運算的狀況
 
 }
 
 int main(void) {
-    char* s= "300  + (100 - 100) +100 ";
+    //char* s= "300  + (100 - 100) +100 ";
+    char* s= "1+ (100-50) ";
     printf("result = %d \n", calculate(s));
     return 0;
 }
