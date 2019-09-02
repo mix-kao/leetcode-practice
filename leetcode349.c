@@ -29,6 +29,8 @@ int* intersection1(int* nums1, int nums1Size, int* nums2, int nums2Size, int* re
     if(nums1==NULL||nums2==NULL) return NULL;
     int* res = (int*) malloc(sizeof(int)*nums1Size);
     int cnt=0;
+    qsort (nums1, nums1Size, sizeof(int), compare);
+    qsort (nums2, nums2Size, sizeof(int), compare);
     for(int i=0; i<nums1Size; i++) {
         if(bsearch((nums1+i), nums2, nums2Size, sizeof(int), compare)!=NULL) {
             if(bsearch((nums1+i), res, cnt, sizeof(int), compare)==NULL) {
